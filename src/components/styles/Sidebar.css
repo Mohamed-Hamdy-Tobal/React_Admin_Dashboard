@@ -1,0 +1,88 @@
+.pro-sidebar {
+    color: #adadad;
+    height: 100%;
+    width: 270px;
+    min-width: 270px;
+    text-align: left;
+    transition: width, left, right, 0.3s;
+    position: relative;
+    z-index: 1009;
+}
+.pro-sidebar.collapsed {
+    width: 80px;
+    min-width: 80px;
+}
+.pro-sidebar > .pro-sidebar-inner {
+    background: #1d1d1d;
+    height: 100%;
+    position: relative;
+    z-index: 101;
+}
+.css-1j1s727 .pro-sidebar-inner {
+    background: #1F2A40!important;
+}
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+}
+
+.pro-sidebar .pro-menu a {
+    text-decoration: none;
+    color: #adadad;
+}
+.pro-sidebar .ps-menuitem-root .ps-menu-label a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+}
+.pro-sidebar .ps-menuitem-root .ps-menu-label.ps-active {
+    font-size: 15px;
+}
+.pro-sidebar .ps-menuitem-root .ps-menu-icon.ps-active {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.pro-sidebar .ps-menuitem-root .ps-menu-icon.ps-active,
+.pro-sidebar .ps-menuitem-root .ps-menu-label.ps-active {
+    color: #6870fa!important;
+}
+
+.css-1t8x7v1 >.ps-menu-button:hover {
+    background-color: transparent !important;
+    color: #6870fa!important;
+}
+.css-1t8x7v1 >.ps-menu-button:hover .ps-menu-icon{
+    animation: swing ease-in-out 0.5s 1 alternate;
+}
+.css-1654oxy >.ps-menu-button:hover {
+    background-color: transparent !important;
+}
+
+@keyframes swing {
+    0%, 30%, 50%, 70%, 100% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+}
