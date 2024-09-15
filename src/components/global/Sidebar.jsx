@@ -13,7 +13,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, MenuItem } from 'react-pro-sidebar';
 import ProSidebar from './ProSidebar';
 
@@ -22,11 +22,11 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     const colors = token(theme.palette.mode);
     return (
         <MenuItem
-            active={selected === title}
+            active={selected === to}
             style={{
                 color: colors.gray[100],
             }}
-            onClick={() => setSelected(title)}
+            onClick={() => setSelected(to)}
             icon={icon}
         >
             <Typography>{title}</Typography>
@@ -35,14 +35,15 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     );
 };
 
-const Sidebar = () => {
+const Sidebar = ({isCollapsed, setIsCollapsed}) => {
 
     const theme = useTheme()
 
     const colors = token(theme.palette.mode)
 
-    const [isCollapsed, setIsCollapsed] = useState(false)
-    const [selected, setSelected] = useState("Dashboard")
+    const local = useLocation()
+
+    const [selected, setSelected] = useState(local.pathname)
 
     return (
         <Box
